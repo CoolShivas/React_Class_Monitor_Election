@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const InputForm = () => {
+const InputForm = ({ additionOfVotesABC }) => {
 
     const [classMateName, setClassMateName] = useState();
 
@@ -8,6 +8,7 @@ const InputForm = () => {
 
     const handlerOnChangeName = (event) => {
         console.log(event.target.value);
+        setClassMateName(event.target.value);
     }
 
     const handlerOnChangeOption = (event) => {
@@ -15,9 +16,18 @@ const InputForm = () => {
         // console.log(event.target.options);
         const selectedOption = event.target.options[event.target.selectedIndex].text;
         console.log(selectedOption);
+        setElectedPerson(selectedOption);
     }
 
-    return <form>
+    const formSubmitHandler = (event) => {
+        event.preventDefault();
+        console.log('vote given to');
+        additionOfVotesABC(classMateName, electedPerson);
+        setClassMateName('');
+        setElectedPerson('');
+    }
+
+    return <form onSubmit={formSubmitHandler}>
         <label htmlFor="studentName"> Student Name </label>
         <input type="text"
             name="studentName"
@@ -40,7 +50,7 @@ const InputForm = () => {
             <option value="Umar"> Umar </option>
         </select>
 
-        <button> Vote </button>
+        <button type="submit"> Vote </button>
         <button> X </button>
     </form>
 }
