@@ -1,3 +1,4 @@
+
 const DisplayData = ({ publicVotersABC, subtractionOfVotesABC }) => {
 
     const standingCandidates = {

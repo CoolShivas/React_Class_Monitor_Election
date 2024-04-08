@@ -1,4 +1,4 @@
-import DisplayData from "./DisplayData";
+import ModalLayout from "./UI/ModalLayout";
 import { useState } from "react";
 
 const InputForm = ({ additionOfVotesABC }) => {
@@ -34,7 +34,7 @@ const InputForm = ({ additionOfVotesABC }) => {
         setElectedPerson('');
     }
 
-    return <>
+    return <ModalLayout>
         <form onSubmit={formSubmitHandler}>
             <label htmlFor="studentName"> Student Name </label>
             <input type="text"
@@ -62,7 +62,7 @@ const InputForm = ({ additionOfVotesABC }) => {
             <button> X </button>
         </form>
 
-    </>
+    </ModalLayout>
 }
 
 export default InputForm;
