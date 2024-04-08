@@ -9,8 +9,14 @@ function App() {
 
   const [publicVoters, setPublicVoters] = useState([]);
 
-  const additionOfVotes = (giveVote, receiveVote) => {
-    console.log(giveVote, 'votes gives to', receiveVote);
+  // const additionOfVotes = (giveVote, receiveVote) => {
+  //   console.log(giveVote, 'votes gives to', receiveVote);
+  // }
+
+  const additionOfVotes = (newVote) => {
+    setPublicVoters((oldVotes) => {
+      return [...oldVotes, newVote]
+    })
   }
 
   const subtractionOfVotes = () => {

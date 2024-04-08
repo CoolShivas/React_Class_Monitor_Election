@@ -18,7 +18,16 @@ const DisplayData = ({ publicVotersABC }) => {
 
             {Object.keys(standingCandidates).map((brr) => {
                 return <li key={brr}>
-                    <h3> {brr} </h3>
+
+                    <h3> {brr} :- </h3>
+                    <ul>
+                        {standingCandidates[brr].map((crr) => {
+                            return <li key={crr}>
+                                <h5> {crr} </h5>
+                            </li>
+                        })}
+                    </ul>
+
                 </li>
             })}
 
