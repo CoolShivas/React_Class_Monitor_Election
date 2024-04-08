@@ -1,3 +1,4 @@
+import DisplayData from "./components/DisplayData";
 import InputForm from "./components/InputForm";
 import AppName from "./components/AppName";
 import { useState } from "react";
@@ -25,7 +26,9 @@ function App() {
       <InputForm additionOfVotesABC={additionOfVotes}></InputForm>
     </main>
 
-    <footer></footer>
+    <footer>
+      <DisplayData publicVotersABC={publicVoters}></DisplayData>
+    </footer>
   </>
 }
 

@@ -22,7 +22,13 @@ const InputForm = ({ additionOfVotesABC }) => {
     const formSubmitHandler = (event) => {
         event.preventDefault();
         console.log('vote given to');
-        additionOfVotesABC(classMateName, electedPerson);
+        // additionOfVotesABC(classMateName, electedPerson);
+        const objectPersons = {
+            id: Math.random(),
+            name: classMateName,
+            candidate: electedPerson,
+        }
+        additionOfVotesABC(objectPersons);
         setClassMateName('');
         setElectedPerson('');
     }
