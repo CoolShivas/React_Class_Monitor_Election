@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 
 
 const Backdrop = (props) => {
-    return <div className={classes.backdrop}></div>
+    return <div className={classes.backdrop} onClick={props.hideInputFormABC}></div>
 }
 
 
@@ -19,7 +19,10 @@ const portalElement = document.getElementById("overlay");
 
 const ModalLayout = (props) => {
     return <>
-        {createPortal(<Backdrop></Backdrop>, portalElement)}
+        {createPortal(<Backdrop
+            hideInputFormABC={props.hideInputFormABC}
+        ></Backdrop>, portalElement)}
+
         {createPortal(<Modal> {props.children} </Modal>, portalElement)}
     </>
 }

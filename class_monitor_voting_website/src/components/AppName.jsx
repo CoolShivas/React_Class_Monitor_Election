@@ -1,4 +1,4 @@
-const AppName = ({ publicVotersABC }) => {
+const AppName = ({ publicVotersABC, showInputFormABC }) => {
 
     const totalVotes = publicVotersABC.length;
 
@@ -7,7 +7,7 @@ const AppName = ({ publicVotersABC }) => {
             <h1> Class Monitor Election
             </h1>
             <h3> Total votes = {totalVotes} </h3>
-            <button> add new vote </button>
+            <button onClick={showInputFormABC}> add new vote </button>
         </center>
     </>
 }

@@ -9,6 +9,16 @@ function App() {
 
   const [publicVoters, setPublicVoters] = useState([]);
 
+  const [dropBox, setDropBox] = useState(false);
+
+  const showInputForm = () => {
+    setDropBox(true);
+  }
+
+  const hideInputForm = () => {
+    setDropBox(false);
+  }
+
   // const additionOfVotes = (giveVote, receiveVote) => {
   //   console.log(giveVote, 'votes gives to', receiveVote);
   // }
@@ -29,11 +39,17 @@ function App() {
 
   return <>
     <header>
-      <AppName publicVotersABC={publicVoters}></AppName>
+      <AppName
+        publicVotersABC={publicVoters}
+        showInputFormABC={showInputForm}
+      ></AppName>
     </header>
 
     <main>
-      <InputForm additionOfVotesABC={additionOfVotes}></InputForm>
+      {dropBox && <InputForm
+        additionOfVotesABC={additionOfVotes}
+        hideInputFormABC={hideInputForm}
+      ></InputForm>}
     </main>
 
     <footer>

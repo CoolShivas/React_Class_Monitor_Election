@@ -1,7 +1,7 @@
 import ModalLayout from "./UI/ModalLayout";
 import { useState } from "react";
 
-const InputForm = ({ additionOfVotesABC }) => {
+const InputForm = ({ additionOfVotesABC, hideInputFormABC }) => {
 
     const [classMateName, setClassMateName] = useState();
 
@@ -34,7 +34,7 @@ const InputForm = ({ additionOfVotesABC }) => {
         setElectedPerson('');
     }
 
-    return <ModalLayout>
+    return <ModalLayout hideInputFormABC={hideInputFormABC}>
         <form onSubmit={formSubmitHandler}>
             <label htmlFor="studentName"> Student Name </label>
             <input type="text"
@@ -59,7 +59,7 @@ const InputForm = ({ additionOfVotesABC }) => {
             </select>
 
             <button type="submit"> Vote </button>
-            <button> X </button>
+            <button onClick={hideInputFormABC}> X </button>
         </form>
 
     </ModalLayout>
