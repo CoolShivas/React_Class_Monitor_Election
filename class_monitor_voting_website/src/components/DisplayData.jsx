@@ -1,5 +1,11 @@
+import { useContext } from "react";
+import { ElectionContext } from "../store/ElectionContext";
 
-const DisplayData = ({ publicVotersABC, subtractionOfVotesABC }) => {
+
+const DisplayData = () => {
+
+    const { publicVoters, subtractionOfVotes } = useContext(ElectionContext);
+
 
     const standingCandidates = {
         Varun: [],
@@ -7,7 +13,7 @@ const DisplayData = ({ publicVotersABC, subtractionOfVotesABC }) => {
         Umar: [],
     };
 
-    publicVotersABC.forEach((arr) => {
+    publicVoters.forEach((arr) => {
         standingCandidates[arr.candidate].push(arr.name);
     })
 
@@ -23,7 +29,7 @@ const DisplayData = ({ publicVotersABC, subtractionOfVotesABC }) => {
                         {standingCandidates[brr].map((crr) => {
                             return <li key={crr}>
                                 {crr}
-                                <button onClick={() => { subtractionOfVotesABC(crr) }}> Cancel </button>
+                                <button onClick={() => { subtractionOfVotes(crr) }}> Cancel </button>
                             </li>
                         })}
                     </ul>

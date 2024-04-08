@@ -1,3 +1,4 @@
+
 import classes from "./ModalLayout.module.css";
 import { createPortal } from 'react-dom';
 
@@ -18,6 +19,7 @@ const Modal = (props) => {
 const portalElement = document.getElementById("overlay");
 
 const ModalLayout = (props) => {
+
     return <>
         {createPortal(<Backdrop
             hideInputFormABC={props.hideInputFormABC}

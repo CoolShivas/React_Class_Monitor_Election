@@ -1,7 +1,9 @@
+import { useContext } from "react";
 import DisplayData from "./components/DisplayData";
 import InputForm from "./components/InputForm";
 import AppName from "./components/AppName";
 import { useState } from "react";
+import { ElectionContext } from "./store/ElectionContext";
 
 
 
@@ -19,10 +21,6 @@ function App() {
     setDropBox(false);
   }
 
-  // const additionOfVotes = (giveVote, receiveVote) => {
-  //   console.log(giveVote, 'votes gives to', receiveVote);
-  // }
-
   const additionOfVotes = (newVote) => {
     setPublicVoters((oldVotes) => {
       return [...oldVotes, newVote]
@@ -37,11 +35,17 @@ function App() {
     setPublicVoters(removeVote);
   }
 
-  return <>
+  return <ElectionContext.Provider value={{
+    publicVoters: publicVoters,
+    showInputForm: showInputForm,
+    additionOfVotes: additionOfVotes,
+    hideInputForm: hideInputForm,
+    subtractionOfVotes: subtractionOfVotes,
+  }}>
     <header>
       <AppName
-        publicVotersABC={publicVoters}
-        showInputFormABC={showInputForm}
+      // publicVotersABC={publicVoters}
+      // showInputFormABC={showInputForm}
       ></AppName>
     </header>
 
@@ -54,11 +58,11 @@ function App() {
 
     <footer>
       <DisplayData
-        publicVotersABC={publicVoters}
-        subtractionOfVotesABC={subtractionOfVotes}
+      // publicVotersABC={publicVoters}
+      // subtractionOfVotesABC={subtractionOfVotes}
       ></DisplayData>
     </footer>
-  </>
+  </ElectionContext.Provider>
 }
 
 export default App;
