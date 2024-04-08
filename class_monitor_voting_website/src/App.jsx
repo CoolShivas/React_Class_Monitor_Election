@@ -19,8 +19,12 @@ function App() {
     })
   }
 
-  const subtractionOfVotes = () => {
+  const subtractionOfVotes = (withdrawlVote) => {
     console.log('votes subtracted');
+    const removeVote = publicVoters.filter((rst) => {
+      return rst.name !== withdrawlVote;
+    })
+    setPublicVoters(removeVote);
   }
 
   return <>
@@ -33,7 +37,10 @@ function App() {
     </main>
 
     <footer>
-      <DisplayData publicVotersABC={publicVoters}></DisplayData>
+      <DisplayData
+        publicVotersABC={publicVoters}
+        subtractionOfVotesABC={subtractionOfVotes}
+      ></DisplayData>
     </footer>
   </>
 }

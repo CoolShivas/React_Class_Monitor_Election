@@ -1,6 +1,4 @@
-
-
-const DisplayData = ({ publicVotersABC }) => {
+const DisplayData = ({ publicVotersABC, subtractionOfVotesABC }) => {
 
     const standingCandidates = {
         Varun: [],
@@ -24,7 +22,7 @@ const DisplayData = ({ publicVotersABC }) => {
                         {standingCandidates[brr].map((crr) => {
                             return <li key={crr}>
                                 {crr}
-                                <button> Cancel </button>
+                                <button onClick={() => { subtractionOfVotesABC(crr) }}> Cancel </button>
                             </li>
                         })}
                     </ul>
