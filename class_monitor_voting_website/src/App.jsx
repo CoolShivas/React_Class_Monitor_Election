@@ -25,7 +25,7 @@ function App() {
 
   return <>
     <header>
-      <AppName></AppName>
+      <AppName publicVotersABC={publicVoters}></AppName>
     </header>
 
     <main>

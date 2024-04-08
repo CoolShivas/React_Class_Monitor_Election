@@ -24,6 +24,8 @@ const DisplayData = ({ publicVotersABC }) => {
                         {standingCandidates[brr].map((crr) => {
                             return <li key={crr}>
                                 <h5> {crr} </h5>
+                                Total votes:- {standingCandidates[brr].length}
+                                <button > Vote Withdrawl </button>
                             </li>
                         })}
                     </ul>
