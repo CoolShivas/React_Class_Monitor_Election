@@ -1,10 +1,19 @@
+import InputForm from "./components/InputForm";
 import AppName from "./components/AppName";
 
 
 
 function App() {
   return <>
-    <AppName></AppName>
+    <header>
+      <AppName></AppName>
+    </header>
+
+    <main>
+      <InputForm></InputForm>
+    </main>
+
+    <footer></footer>
   </>
 }
 
