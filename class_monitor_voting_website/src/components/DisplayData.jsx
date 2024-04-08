@@ -1,3 +1,4 @@
+import classes from "./DisplayData.module.css";
 import { useContext } from "react";
 import { ElectionContext } from "../store/ElectionContext";
 
@@ -19,27 +20,33 @@ const DisplayData = () => {
 
     return <>
         <h2> Nominated Candidates are :- </h2>
-        <ul>
+        <div className={classes.super_container}>
+            <div className={classes.container}>
+                <ul>
 
-            {Object.keys(standingCandidates).map((brr) => {
-                return <li key={brr}>
+                    {Object.keys(standingCandidates).map((brr) => {
+                        return <li key={brr}>
 
-                    <h3> {brr} :- </h3>
-                    <ul>
-                        {standingCandidates[brr].map((crr) => {
-                            return <li key={crr}>
-                                {crr}
-                                <button onClick={() => { subtractionOfVotes(crr) }}> Cancel </button>
-                            </li>
-                        })}
-                    </ul>
+                            <h3> {brr} :- </h3>
+                            <ul>
+                                {standingCandidates[brr].map((crr) => {
+                                    return <li key={crr}>
+                                        {crr}
+                                        <button onClick={() => { subtractionOfVotes(crr) }}
+                                            className={classes.cancelBtn}
+                                        > Cancel </button>
+                                    </li>
+                                })}
+                            </ul>
 
-                    Total vote : {standingCandidates[brr].length}
+                            Total vote : {standingCandidates[brr].length}
 
-                </li>
-            })}
+                        </li>
+                    })}
 
-        </ul>
+                </ul>
+            </div>
+        </div>
     </>
 }
 

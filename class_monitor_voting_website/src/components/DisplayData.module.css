@@ -1,0 +1,23 @@
+h2 {
+    background-color: aquamarine;
+    text-align: center;
+}
+
+.super_container {
+    list-style: none;
+    background-color: #E5C287;
+}
+
+.container {
+    padding: 10px;
+}
+
+.cancelBtn {
+    background-color: orange;
+    padding: 2px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
