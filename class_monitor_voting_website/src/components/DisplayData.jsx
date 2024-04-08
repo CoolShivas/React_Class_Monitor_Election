@@ -13,12 +13,15 @@ const DisplayData = ({ publicVotersABC }) => {
     })
 
     return <>
+        <h2> Nominated Candidates are :- </h2>
         <ul>
-            {publicVotersABC.map((arr) => {
-                return <li key={arr.name}>
-                    {arr.voter}
+
+            {Object.keys(standingCandidates).map((brr) => {
+                return <li key={brr}>
+                    <h3> {brr} </h3>
                 </li>
             })}
+
         </ul>
     </>
 }
